@@ -16,7 +16,7 @@ reuse, specialized agents — but stays cheap:
 ## Install
 
 ```
-/plugin marketplace add https://github.com/<you>/cskill
+/plugin marketplace add https://github.com/SungJun1217/cskill
 /plugin install cskill@cskill
 ```
 
@@ -27,7 +27,14 @@ reuse, specialized agents — but stays cheap:
 | Command | What it does |
 |---------|--------------|
 | `/cskill:auto [task]` | Lightweight autopilot: understand → change → verify. Delegates only when the work is heavy; routes to the cheapest capable model. |
+| `/cskill:explore [q]` | Run the `cs-explorer` agent (haiku) directly — locate code / answer a where-how question. |
+| `/cskill:plan [task]` | Run the `cs-planner` agent (opus) directly — produce a complete, unambiguous plan. |
+| `/cskill:code [change]` | Run the `cs-coder` agent (sonnet) directly — implement a scoped change and verify it. |
+| `/cskill:review [target]` | Run the `cs-reviewer` agent (haiku) directly — review a diff for real bugs (defaults to the working diff). |
 | `/cskill:skill-save [name]` | Save the pattern just solved as a reusable skill so it's never re-derived. |
+
+`/cskill:auto` orchestrates the agents for you; the four agent commands above are thin
+direct entry points (`context: fork` → the agent) for when you already know which one you want.
 
 ## Agents
 
