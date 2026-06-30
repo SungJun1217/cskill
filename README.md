@@ -34,6 +34,7 @@ reuse, specialized agents — but stays cheap:
 | Agent | Model | Role |
 |-------|-------|------|
 | `cs-explorer` | haiku | Read-only search/locate across the repo. Returns conclusions, not file dumps. |
+| `cs-planner` | opus | Read-only. Turns a non-trivial task into a concrete, ordered plan. |
 | `cs-coder` | sonnet | Implements a well-scoped change and verifies it. |
 | `cs-reviewer` | haiku | Reviews a diff for real correctness bugs. Read-only. |
 
@@ -42,8 +43,8 @@ These are invoked automatically by `/cskill:auto`, or you can ask for them by na
 ## Model routing policy
 
 - **haiku** — search/location (`cs-explorer`) and diff review (`cs-reviewer`). Dry-run showed haiku catches real regressions and avoids false positives when given the intended behavior.
-- **sonnet** — code edits and most autopilot work (`cs-coder`).
-- **opus** — only for genuinely hard reasoning, and only when explicitly escalated.
+- **sonnet** — code edits (`cs-coder`) and most autopilot work.
+- **opus** — planning a non-trivial task (`cs-planner`), and any other genuinely hard reasoning. Used deliberately, not by default — most tasks never invoke it.
 
 ## How the token savings work
 

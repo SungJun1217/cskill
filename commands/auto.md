@@ -15,7 +15,7 @@ You are running **cskill auto** — a deliberately minimal autopilot. The goal i
 ## Flow
 
 1. **Understand** — read only the files you need. If you must search broadly across the repo, delegate to `cs-explorer`. Otherwise read directly.
-2. **Plan (only if needed)** — if the task touches >2 files or has real ambiguity, write a 2-4 line plan first. Otherwise skip straight to doing it.
+2. **Plan (only if needed)** — for a small task, skip straight to doing it. If the task touches a few files or has real ambiguity, write a 2-4 line plan inline. Only for a genuinely large or unfamiliar task, delegate to `cs-planner` (opus) and follow the plan it returns.
 3. **Implement** — make the change. Inline for small work; delegate to `cs-coder` for large, well-scoped work.
 4. **Verify** — run the narrowest check that proves it works (the single test, a focused build). For risky changes, have `cs-reviewer` look at the diff — and tell it the intended behavior plus that the tests pass, so it reviews against intent instead of guessing the spec.
 5. **Report** — 2-4 lines: what you did, files touched (`path:line`), how you verified, and the model/agents you used. If you saved a meaningful amount of work, mention `/cskill:skill-save` as an option.
