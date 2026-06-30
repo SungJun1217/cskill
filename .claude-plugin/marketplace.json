@@ -1,0 +1,14 @@
+{
+  "name": "cskill",
+  "owner": {
+    "name": "jun"
+  },
+  "description": "Mini, token-frugal Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "cskill",
+      "source": "./",
+      "description": "Lean agents, cheap-model routing, lightweight autopilot, and reusable skills — the good parts of heavy orchestration frameworks without the token cost."
+    }
+  ]
+}

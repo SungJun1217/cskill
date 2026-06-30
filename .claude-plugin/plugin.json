@@ -1,0 +1,9 @@
+{
+  "name": "cskill",
+  "description": "Mini, token-frugal Claude Code orchestration: a few lean agents, cheap-model routing, lightweight autopilot, and reusable skills.",
+  "version": "0.1.0",
+  "author": {
+    "name": "jun"
+  },
+  "keywords": ["orchestration", "token-efficient", "agents", "autopilot", "skills"]
+}
