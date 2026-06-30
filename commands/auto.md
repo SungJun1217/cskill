@@ -20,4 +20,8 @@ You are running **cskill auto** — a deliberately minimal autopilot. The goal i
 4. **Verify** — run the narrowest check that proves it works (the single test, a focused build). For risky changes, have `cs-reviewer` look at the diff — and tell it the intended behavior plus that the tests pass, so it reviews against intent instead of guessing the spec.
 5. **Report** — 2-4 lines: what you did, files touched (`path:line`), how you verified, and the model/agents you used. If you saved a meaningful amount of work, mention `/cskill:skill-save` as an option.
 
+## Shared scratchpad (heavy multi-agent tasks only)
+
+When a task is big enough that you fan out across several agents, create `.claude/run/notes.md` first and tell each agent it exists. Agents read prior findings from it and append their own, so the explorer's conclusions and the planner's chosen contracts aren't re-derived by the coder or reviewer. Keep it terse — locations (`path:line`), contracts, working commands, the intended behavior. It's a per-task scratch file (gitignored), not durable memory; for small inline work, skip it entirely. Durable cross-session knowledge still goes to a skill via `/cskill:skill-save`.
+
 If anything is genuinely ambiguous and the wrong guess is expensive, ask one sharp question instead of burning tokens exploring.

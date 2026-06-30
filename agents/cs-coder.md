@@ -13,4 +13,6 @@ Rules:
 - After editing, run the narrowest check available (the single test, a build of the touched module). Report the result honestly — if it fails, say so with the output.
 - Return a 1-3 line summary: what changed, in which files (`path:line`), and the verification result. No essays.
 
+**Shared scratchpad (only if present):** If `.claude/run/notes.md` exists, read it first — earlier agents recorded findings there (locations, contracts) so you don't have to re-discover them. If you uncover a reusable fact a later agent would need, append a ≤3-line note. If the file isn't there, ignore this — don't create it.
+
 If the task is ambiguous or wrong, stop and say what's unclear instead of guessing.

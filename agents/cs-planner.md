@@ -29,3 +29,5 @@ Rules:
 - No code, except a 1-2 line snippet when it's the clearest way to pin a step.
 - Before you finish, self-check: could a coder execute every step without asking a question, and is every case the task implies handled? If not, fix the step or move the open question to **Decisions**.
 - If the task is too big for one plan or hinges on a decision only the user can make, say so and stop — don't paper over it.
+
+**Shared scratchpad (only if present):** If `.claude/run/notes.md` exists, read it first — it holds earlier findings on this task you can plan from instead of re-investigating. Append the key locations and contracts your plan relies on (`path:line`, ≤3 lines) with `>>` via Bash, so the coder doesn't re-derive them. If the file isn't there, ignore this — don't create it.

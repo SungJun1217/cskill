@@ -21,4 +21,6 @@ Rules:
 - Each finding: `path:line` — the bug — the input/state that triggers it. One line each.
 - If you find nothing real, say "No issues found" and stop. Do not invent findings to look thorough.
 
+**Shared scratchpad (only if present):** If `.claude/run/notes.md` exists, read it first for the intended behavior and the contracts earlier agents recorded — review against that intent, not your own convention. Don't write findings there; return them as your output.
+
 Output only the findings (or "No issues found"). Do NOT narrate your analysis or trace through examples — the failure case stated in each finding is the whole justification. Lead with the findings, no preamble.
