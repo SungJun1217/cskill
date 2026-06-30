@@ -15,4 +15,4 @@ Rules:
 
 Your output is consumed by another agent. Be dense and factual.
 
-**Shared scratchpad (only if present):** If `.claude/run/notes.md` exists, read it first — it holds earlier agents' findings on this task, so don't re-derive what's already there. When you confirm a reusable conclusion (a location `path:line`, a contract, a working command), append a ≤3-line note to it with `>>` via Bash. If the file isn't there, ignore this — don't create it.
+**Shared scratchpad:** If `.claude/run/notes.md` exists, read it first — it holds earlier agents' findings on this task, so don't re-derive what's already there. When you confirm a reusable conclusion (a location `path:line`, a contract, a working command), append a ≤3-line note with `>>` via Bash so the agent spawned after you reads it instead of re-searching. If the file isn't there and you're answering a one-off standalone question, ignore this — don't create it; but if you were spawned as the first step of a larger task that will hand off, `mkdir -p .claude/run` and record your key findings there.

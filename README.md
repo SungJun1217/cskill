@@ -28,7 +28,7 @@ reuse, specialized agents — but stays cheap:
 |---------|--------------|
 | `/cskill:auto [task]` | Lightweight autopilot: understand → change → verify. Delegates only when the work is heavy; routes to the cheapest capable model. |
 | `/cskill:explore [q]` | Run the `cs-explorer` agent (haiku) directly — locate code / answer a where-how question. |
-| `/cskill:plan [task]` | Run the `cs-planner` agent (opus) directly — produce a complete, unambiguous plan. |
+| `/cskill:plan [task]` | Run the `cs-planner` agent (opus) directly — produce a complete, unambiguous plan that ends by telling the executor to *spawn* `cs-coder` to implement and `cs-reviewer` to review (each subagent loads its own system prompt + model; it's not a model switch). |
 | `/cskill:code [change]` | Run the `cs-coder` agent (sonnet) directly — implement a scoped change and verify it. |
 | `/cskill:review [target]` | Run the `cs-reviewer` agent (haiku) directly — review a diff for real bugs (defaults to the working diff). |
 | `/cskill:skill-save [name]` | Save the pattern just solved as a reusable skill so it's never re-derived. |
