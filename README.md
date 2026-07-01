@@ -8,7 +8,7 @@ Big frameworks burn tokens by loading many agents with large system prompts and 
 them out in parallel. cskill keeps the useful ideas — orchestration, model routing, skill
 reuse, specialized agents — but stays cheap:
 
-- **3 lean agents**, short prompts.
+- **4 lean agents**, short prompts.
 - **Cheap-model routing** — the cheapest model that can do the job; escalate only when needed.
 - **Single-threaded by default** — no agent fan-out unless the work genuinely warrants it.
 - **Skill reuse** — solve a problem once, recall it cheaply forever.
@@ -66,7 +66,20 @@ These are invoked automatically by `/cskill:auto`, or you can ask for them by na
 .claude-plugin/
   plugin.json          # plugin manifest
   marketplace.json     # makes the repo installable
-agents/                # cs-explorer, cs-coder, cs-reviewer
-commands/              # auto, skill-save
+agents/                # cs-explorer, cs-planner, cs-coder, cs-reviewer
+commands/              # auto, explore, plan, code, review, skill-save
 skills/                # reusable patterns (populated by /cskill:skill-save)
+scripts/               # validate.py — structure/regression check
 ```
+
+## Development
+
+After editing anything under `agents/`, `commands/`, or `skills/`, run the
+structure check:
+
+```
+python3 scripts/validate.py
+```
+
+It verifies frontmatter, valid model tiers, agent references, and that names
+match filenames — a fast regression guard with no dependencies.
